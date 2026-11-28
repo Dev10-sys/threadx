@@ -100,6 +100,7 @@ elseif(THREADX_MODULE_MANAGER)
         "${TX_PORT_PATH}/module_manager/src/*.S"
         "${TX_PORT_PATH}/module_manager/src/*.s"
     )
+    list(FILTER TX_PORT_SOURCES EXCLUDE REGEX "tx_initialize_low_level\\.[Ss]")
     if(THREADX_ARCH STREQUAL "cortex_r52")
         file(GLOB TX_R52_BASE_SOURCES
             "${CMAKE_CURRENT_LIST_DIR}/ports/cortex_r52/gnu/src/tx_thread_fiq_*.S"
